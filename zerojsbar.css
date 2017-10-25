@@ -1,0 +1,123 @@
+@media (min-width: 601px){
+	.zerojsbar > input, .zerojsbar > .burger{
+		display: none !important;
+	}
+}
+
+@media (max-width: 600px){
+	.zerojsbar > ul{
+		display: none;
+	}
+
+	.zerojsbar > input:checked ~ ul{
+		display: block;
+		width: 100%;
+	}
+
+	.zerojsbar > input:checked ~ ul li{
+		width: 100%;
+	}
+	
+	.zerojsbar > input:checked ~ ul .right{
+		float: none;
+	}
+
+}
+
+.zerojsbar{
+	width: 100%;
+	position: sticky;
+	float: left;
+	top: 0;
+	background-color: #5F5F5F;
+	margin-bottom: 8px;
+}
+
+/* spacer is required for some older browsers which don't support resizing an input elem*/
+.zerojsbar > .spacer{
+	width: 0;
+	float: right;
+}
+
+.zerojsbar > input{
+	vertical-align: middle;
+	float: right;
+	opacity: 0;
+	margin: 0;
+	cursor: pointer;
+	position: relative;
+	z-index: 2; 
+}
+
+.zerojsbar > .burger{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	right: 0;
+	position: absolute;
+	z-index: 1;
+}
+
+
+.zerojsbar > input:checked ~ .burger > span:first-child{
+	transform: translateY(250%) rotate(45deg);
+}
+
+.zerojsbar > input:checked ~ .burger > span:nth-last-child(2){
+	opacity: 0;
+}
+
+.zerojsbar > input:checked ~ .burger > span:nth-last-child(1){
+	transform: translateY(-250%) rotate(-45deg);
+}
+
+.zerojsbar > input, .zerojsbar > .burger{
+	width: 42px;
+}
+
+.zerojsbar > .burger > span{
+	display: block;
+	width: 33px;
+	height: 4px;
+	margin: 3px 0;
+
+	background: white;
+	border-radius: 3px;
+}
+
+.zerojsbar > ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+.zerojsbar > ul li{
+	float: left;
+}
+
+.zerojsbar > ul li > *{
+	display: flex;
+	align-items: center;
+	text-align: center;
+	text-decoration: none;
+	padding: 0 16px;
+	color: white;
+}
+
+.zerojsbar > ul li > *, .zerojsbar > input, .zerojsbar > .burger, .zerojsbar > .spacer{
+	height: 42px;
+}
+
+.zerojsbar > ul li > a:hover{
+	background-color: #111;
+}
+
+.zerojsbar > ul li.active{
+	background-color: #4CAF50;
+}
+
+.zerojsbar > ul > .right{
+	float: right;
+}
